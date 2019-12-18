@@ -7,19 +7,29 @@ KATE_G = { name:  "Kate Gompert", occupation: "None" }
 BRUCE_G = { name:  "Bruce Green", occupation: "Fan of Mildred" }
 
 def assembled_aoh
-  # Build an array that contains (or, "nests") the constants into a single
-  # Array. Ruby constants are denoted by ALL_CAPS
+array_hashes = [
+  DON_G,
+  JOELLE_VD,
+  PAT_M,
+  KATE_G,
+  BRUCE_G,
+  ]
 end
 
 def literal_aoh
-  # Using Array literal syntax only, build a nested array that uses the data in
-  # held in the constants
+ array_hashes = []
+ array_hashes << DON_G 
+ array_hashes << JOELLE_VD 
+ array_hashes << PAT_M 
+ array_hashes << KATE_G 
+ array_hashes << BRUCE_G
 end
 
 def aoh_lookup(aoh, row, key)
+  aoh[row][key]
 end
 
 def aoh_update(aoh, row, key, new_value)
-  # Update the AoH data at row and key to have the value of new_value
-  # Return the updated AoH
-end
+ aoh[row][key] = new_value
+ return aoh
+ end
